@@ -3,8 +3,10 @@
 function getValue() {
     document.getElementById("alert").classList.add("d-none");
     let userString = document.getElementById("userString").value;
-    let isPalindrome = checkForPalindrome(userString);
-    displayData(isPalindrome);
+    let returnObj = checkForPalindrome(userString);
+
+
+    displayData(returnObj);
 }
 
 
@@ -13,6 +15,11 @@ function getValue() {
 function checkForPalindrome(userString) {
 
     userString = userString.toLowerCase();
+    isPalindrome = false;
+    let returnObj = {};
+
+
+
 
     let regex = /[^a-z0-9]/gi;
     userString = userString.replace(regex, "");
@@ -24,28 +31,35 @@ function checkForPalindrome(userString) {
     }
 
     if (revString !== userString) {
-        return false;
+        isPalindrome = false;
+
+    } else {
+        isPalindrome = true
     }
-    return true;
+
+    returnObj["IsPalindrome"] = isPalindrome;
+    returnObj["revString"] = revString;
+
+    return returnObj;
 
 }
 
 //Display the reversed string to the user
 //View Function
-function displayData(isPalindrome) {
+function displayData(returnObj) {
 
     document.getElementById("alert").classList.remove("alert-success")
     document.getElementById("alert").classList.remove("alert-danger")
 
 
-    if (isPalindrome == true) {
+    if (returnObj["IsPalindrome"] == true) {
         document.getElementById("alert").classList.add("alert-success")
         document.getElementById("alertHeader").innerHTML = "Well Done!"
-        document.getElementById("msg").innerHTML = `Your phrase is a palindrome`;
+        document.getElementById("msg").innerHTML = `Your phrase is a palindrome<br>Your reversed string is:${returnObj["revString"]}`;
     } else {
         document.getElementById("alert").classList.add("alert-danger")
         document.getElementById("alertHeader").innerHTML = "Oh No!"
-        document.getElementById("msg").innerHTML = `Your phrase is NOT palindrome`;
+        document.getElementById("msg").innerHTML = `Your phrase is NOT palindrome<br>Your reversed string is:${returnObj["revString"]}`;
     }
     document.getElementById("alert").classList.remove("d-none");
 
