@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>APP NAME: A JS PROJECT</title>
+    <title>Taco Cat: A JS PROJECT</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,7 +25,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
                 <img src="img/MspectreMark.svg" height="24" class="d-inline-block align-text-top">
-                APP NAME</a>
+                Taco Cat</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -52,11 +52,32 @@
     <main class="flex-shrink-0">
         <div class="container mt-5">
             <div>
-                <h1>APP UI WILL GO HERE</h1>
-                <input id="message" name="mesage" placeholder="Enter A Message">
-                <div class="p-2">
-                    <button id="btnSubmit" class="btn btn-primary">Display Message</button>
+                <div class="row">
+                    <div class="col">
+                        <h1>Taco Cat| Coding Challenge</h1>
+                        <h4 class="lead">Is there a taco in my cat? Or a cat in my taco?</h4>
+                    </div>
+                    <div class="col">
+                        <!--Main app ui-->
+                        <h5>Enter A String To Reverse</h5>
+                        <form class="row gx-3 g-2">
+                            <div class="col">
+                                <input id="userString" type="text" class="form-control" placeholder="Enter A String"
+                                    aria-label="Enter A String">
+                            </div>
+                            <div class="col-12 d-flex justiify-content-start justify-content-md-end">
+                                <button id="btnSubmit" type="button" class="btn btn-primary">Hit It</button>
+                            </div>
+                        </form>
+                        <div class="alert alert-success mt-5 d-none fade show" id="alert" role="alert">
+                            <h4 id="alertHeader" class="alert-heading">You Did It!</h4>
+                            <p class="mb-0" id="msg">
+                                <!--Content Goes-->
+                            </p>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </main>

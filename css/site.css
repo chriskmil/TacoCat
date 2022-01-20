@@ -53,7 +53,7 @@ main>.container {
 }
 
 .btn-primary {
-    color: white !important;
+    color: rgb(255, 255, 255) !important;
     background-color: var(--cm-secondary-color) !important;
     border-color: var(--cm-secondary-color);
 }
